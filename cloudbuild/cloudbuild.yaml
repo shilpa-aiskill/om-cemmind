@@ -1,0 +1,14 @@
+steps:
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: bash
+    args:
+      - -lc
+      - |
+        echo "✅ OM CemMind CI is connected."
+        echo "Project: $(gcloud config get-value project)"
+        echo "Branch: $BRANCH_NAME  Commit: $COMMIT_SHA"
+        echo "This is a placeholder pipeline; build+deploy steps come next."
+
+# Optional: require substitutions in the future (kept open now)
+options:
+  logging: CLOUD_LOGGING_ONLY
