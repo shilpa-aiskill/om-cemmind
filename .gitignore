@@ -1,12 +1,6 @@
-# Python
+kiln_signals_24h.csv
+*.log
+**/$LOGFILE
+**/history-*.log
 __pycache__/
-*.pyc
-.venv/
 .env
-
-# Node / misc
-node_modules/
-
-# OS
-.DS_Store
-Thumbs.db
