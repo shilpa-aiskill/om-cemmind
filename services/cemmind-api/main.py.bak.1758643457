@@ -1,0 +1,30 @@
+from fastapi import FastAPI, Request, Response
+from fastapi.responses import HTMLResponse, JSONResponse
+
+app = FastAPI(title="OM CemMind API (Prototype)")
+
+@app.get("/", response_class=HTMLResponse)
+def home():
+    return "<h2>OM CemMind Prototype</h2><p>Landing page is working ✅</p>"
+
+@app.get("/healthz")
+def healthz():
+    return JSONResponse({"ok": True})
+
+@app.post("/pubsub/kiln")
+async def pubsub_kiln(request: Request):
+    try:
+        body = await request.json()
+        print("PUBSUB_PUSH", body)
+    except Exception as e:
+        print("PUBSUB_PUSH_PARSE_ERROR", str(e))
+    return Response(status_code=204)
+
+
+@app.get("/", response_class=HTMLResponse)
+def home():
+    return "<h2>OM CemMind Prototype</h2><p>Landing page is working ✅</p>"
+
+@app.get("/", response_class=HTMLResponse)
+def home():
+    return "<h2>OM CemMind Prototype</h2><p>Landing page is working ✅</p>"
