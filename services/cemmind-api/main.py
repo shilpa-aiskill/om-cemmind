@@ -19,5 +19,3 @@ async def pubsub_kiln(request: Request):
     except Exception as e:
         print("PUBSUB_PUSH_PARSE_ERROR", str(e))
     return Response(status_code=204)
-
-
