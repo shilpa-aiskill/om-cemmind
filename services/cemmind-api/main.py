@@ -21,3 +21,7 @@ async def pubsub_kiln(request: Request):
     except Exception:
         pass
     return Response(status_code=204)
+
+@app.get("/favicon.ico")
+def favicon():
+    return Response(status_code=204)
